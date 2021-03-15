@@ -7,6 +7,16 @@ spring:
     config:
       server:
         git:
-          uri: 
+          uri: https://github.com/cailonghao/hello-world-springcloud
           username: 1719341471@qq.com
           password: a923124582
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: 127.0.0.1:${server.port}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:40000/eureka/
