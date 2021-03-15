@@ -1,0 +1,12 @@
+server:
+  port: 30000
+spring:
+  application:
+    name: swan-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: 
+          username: 1719341471@qq.com
+          password: a923124582

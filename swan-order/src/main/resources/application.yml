@@ -1,0 +1,35 @@
+---
+server:
+  port: 42000
+spring:
+  application:
+    name: swan-order
+  profiles: dev1
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: 127.0.0.1:${server.port}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:40000/eureka/
+
+---
+server:
+  port: 42001
+spring:
+  application:
+    name: swan-order
+  profiles: dev2
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: 127.0.0.1:${server.port}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:40000/eureka/

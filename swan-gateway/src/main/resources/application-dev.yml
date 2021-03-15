@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: swan-order
+          uri: lb://swan-order
+          predicates:
+          - Path=/order/**
+        - id:
+          uri: lb://swan-user
+          predicates:
+          - Path=/user/**
+        - id: baidu
+          uri: https://www.baidu.com
+          predicates:
+          - Path=/baidu/**

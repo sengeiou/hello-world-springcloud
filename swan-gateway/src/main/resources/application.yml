@@ -1,0 +1,17 @@
+server:
+  port: 50000
+spring:
+  application:
+    name: swan-zuul
+  profiles:
+    active: dev
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: 127.0.0.1:${server.port}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:40000/eureka/
