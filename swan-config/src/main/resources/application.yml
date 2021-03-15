@@ -6,10 +6,12 @@ spring:
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/cailonghao/hello-world-springcloud
-          username: 1719341471@qq.com
-          password: a923124582
+        native:
+          search-locations: classpath:/config
+        #git:
+          #uri: https://github.com/cailonghao/hello-world-springcloud
+          #username: 1719341471@qq.com
+          #password: a923124582
 eureka:
   instance:
     hostname: localhost

@@ -1,0 +1,4 @@
+config:
+  server:
+    name: swan-config
+    port: 20000
