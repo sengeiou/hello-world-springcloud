@@ -3,7 +3,7 @@ server:
 config:
   server:
     user:
-      name: cainiao
+      name: cainiao1234
       port: 123456
       data:
         args1: args1

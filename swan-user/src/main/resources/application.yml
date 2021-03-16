@@ -1,11 +1,8 @@
 server:
   port: 41000
-config:
-  server:
-    user:
-      name:
-      port:
-      data:
-        args1:
-        args2:
-        args3:
+spring:
+  rabbitmq:
+    host: 81.71.36.134
+    prot: 5672
+    username: root
+    password: root
