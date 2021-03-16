@@ -1,18 +1,12 @@
-server:
-  port: 30000
 spring:
   application:
-    name: swan-config
+    name: swan-user
   cloud:
     config:
       discovery:
         enabled: true
         service-id: swan-config
-      server:
-        git:
-          uri: https://github.com/cailonghao/hello-world-springcloud
-          username: 1719341471@qq.com
-          password: a923124582
+
 eureka:
   instance:
     hostname: localhost
@@ -23,3 +17,6 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://${eureka.instance.hostname}:40000/eureka/
+feign:
+  hystrix:
+    enabled: true
