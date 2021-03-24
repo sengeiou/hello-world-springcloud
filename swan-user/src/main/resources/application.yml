@@ -1,8 +1,0 @@
-server:
-  port: 41000
-spring:
-  rabbitmq:
-    host: 81.71.36.134
-    prot: 5672
-    username: root
-    password: root

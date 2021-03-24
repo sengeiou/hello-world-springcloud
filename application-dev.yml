@@ -2,3 +2,9 @@ config:
   server:
     name: swan-config
     port: 20000
+spring:
+  servlet:
+  multipart:
+    enabled: true
+    maxFileSize: 100M
+    maxRequestSize: 100M
