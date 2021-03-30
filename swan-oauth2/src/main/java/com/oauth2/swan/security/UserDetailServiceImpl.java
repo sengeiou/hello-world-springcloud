@@ -1,5 +1,4 @@
-package com.security.swan.service;
-
+package com.oauth2.swan.security;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -8,22 +7,24 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
 @Slf4j
-@Service
+@Component
 public class UserDetailServiceImpl implements UserDetailsService {
 
+
     @Resource
-    private PasswordEncoder passwordEncoder;
+    PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        log.info("用户登陆请求：{}", s);
+        log.info("登录用户->{}", s);
         String pass = passwordEncoder.encode("123456");
-        log.info("pass={}", pass);
-        return new User(s, pass, AuthorityUtils.createAuthorityList("admin,normal"));
+        return new User(s,
+                pass,
+                AuthorityUtils.createAuthorityList("app-insert", "ROLE_admin"));
     }
 }

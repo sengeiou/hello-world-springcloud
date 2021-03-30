@@ -13,6 +13,7 @@
         <module>swan-config</module>
         <module>swan-security</module>
         <module>swan-sleuth</module>
+        <module>swan-oauth2</module>
     </modules>
 
 
